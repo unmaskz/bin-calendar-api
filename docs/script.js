@@ -70,13 +70,13 @@ async function createWidget() {
     widget.addSpacer(15);
 
     let bins = widget.addStack();
+    bins.addSpacer();
     let binOne = bins.addImage(getBinImage(nextCollection.bins[0]));
     let binTwo = bins.addImage(getBinImage(nextCollection.bins[1]));
     binOne.imageSize = new Size(35, 35);
     binTwo.imageSize = new Size(35, 35);
-    binOne.centerAlignImage();
-    binTwo.centerAlignImage();
+    bins.addSpacer();
 
-    widget.backgroundColor = new Color("#000000");
+    widget.backgroundGradient = newLinearGradient(['#00000022','#00000022'], [0,1]);
     return widget;
 }
