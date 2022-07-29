@@ -57,11 +57,9 @@ async function createWidget() {
 
     widget.addSpacer(15);
 
-    let binOne = widget.addText(getIcon(nextCollection.bins[0]));
-    binOne.centerAlignText();
-
-    let binTwo = widget.addText(getIcon(nextCollection.bins[1]));
-    binTwo.centerAlignText();
+    let binsText = `${getIcon(nextCollection.bins[0])} ${getIcon(nextCollection.bins[1])}`;
+    let bins = widget.addText(binsText);
+    bins.centerAlignText();
 
     widget.backgroundColor = new Color("#000000");
     return widget;
