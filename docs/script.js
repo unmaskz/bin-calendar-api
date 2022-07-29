@@ -1,9 +1,4 @@
 const dataUrl = "https://unmaskz.github.io/bin-calendar-api/calendar.json";
-const blueBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/blue-bin.png").loadImage();
-const brownBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/brown-bin.png").loadImage();
-const greenBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/green-bin.png").loadImage();
-const greyBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/grey-bin.png").loadImage();
-
 
 let widget = await createWidget();
 Script.setWidget(widget);
@@ -35,15 +30,15 @@ function dayDifference(today, nextCollectionDate) {
     return Math.ceil(difference / (1000 * 3600 * 24));
 }
 
-function getBinImage(bin) {
+function getBinColour(bin) {
     if (bin === 'Brown') {
-        return brownBinImage;
+        return '#7f6d49';
     } else if (bin === 'Green') {
-        return greenBinImage;
+        return '#728c6f';
     } else if (bin === 'Blue') {
-        return blueBinImage;
+        return '#0074bd';
     } else {
-        return greyBinImage;
+        return '#575556';
     }
 }
 
@@ -55,7 +50,7 @@ async function createWidget() {
     const data = await new Request(dataUrl).loadJSON();
     const nextCollection = data.calendar.find(item => item.day === formatDate(nextCollectionDate));
 
-    let heading = widget.addText("Bins Due in");
+    let heading = widget.addText("Bins Due In");
     heading.centerAlignText();
     heading.font = Font.lightSystemFont(18);
     heading.textColor = new Color("#ffffff");
@@ -71,8 +66,11 @@ async function createWidget() {
 
     let bins = widget.addStack();
     bins.addSpacer();
-    let binOne = bins.addImage(getBinImage(nextCollection.bins[0]));
-    let binTwo = bins.addImage(getBinImage(nextCollection.bins[1]));
+    let binIcon = SFSymbol.named('trash.fill')
+    let binOne = bins.addImage(binIcon.image);
+    let binTwo = bins.addImage(binIcon.image);
+    binOne.tintColor = Color(getBinColour(nextCollection.bins[0]));
+    binTwo.tintColor = Color(getBinColour(nextCollection.bins[1]));
     binOne.imageSize = new Size(35, 35);
     binTwo.imageSize = new Size(35, 35);
     bins.addSpacer();
