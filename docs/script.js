@@ -48,7 +48,7 @@ async function createWidget() {
     const daysUntilNextCollection = dayDifference(new Date(), nextCollectionDate);
 
     const data = await new Request(dataUrl).loadJSON();
-    const nextBins = data.calendar.find(item => item.day === formatDate(nextCollectionDate));
+    const nextCollection = data.calendar.find(item => item.day === formatDate(nextCollectionDate));
 
     let heading = widget.addText(`Next Collection: ${daysUntilNextCollection} days`);
     heading.centerAlignText();
@@ -57,10 +57,10 @@ async function createWidget() {
 
     widget.addSpacer(15);
 
-    let binOne = widget.addText(getIcon(nextBins[0]));
+    let binOne = widget.addText(getIcon(nextCollection.bins[0]));
     binOne.centerAlignText();
 
-    let binTwo = widget.addText(getIcon(nextBins[1]));
+    let binTwo = widget.addText(getIcon(nextCollection.bins[1]));
     binTwo.centerAlignText();
 
     widget.backgroundColor = new Color("#000000");
