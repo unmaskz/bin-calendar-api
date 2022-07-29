@@ -32,7 +32,7 @@ function dayDifference(today, nextCollectionDate) {
 
 function getBinColour(bin) {
     if (bin === 'Brown') {
-        return '#6b6162';
+        return '#3a3434';
     } else if (bin === 'Green') {
         return '#48a03f';
     } else if (bin === 'Blue') {
