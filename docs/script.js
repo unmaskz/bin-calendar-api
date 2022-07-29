@@ -30,13 +30,6 @@ function dayDifference(today, nextCollectionDate) {
     return Math.ceil(difference / (1000 * 3600 * 24));
 }
 
-function add(stack, text) {
-    let dateText = stack.addText(text);
-    dateText.centerAlignText();
-    dateText.font = Font.semiboldSystemFont(20);
-    dateText.textColor = new Color("#ffffff");
-}
-
 function getIcon(bin) {
     if (bin === 'Brown') {
         return '🟤';
@@ -50,7 +43,7 @@ function getIcon(bin) {
 }
 
 async function createWidget() {
-    //const widget = new ListWidget();
+    const widget = new ListWidget();
     const nextCollectionDate = getNextDayOfTheWeek('Tuesday');
     const daysUntilNextCollection = dayDifference(new Date(), nextCollectionDate);
 
@@ -64,10 +57,10 @@ async function createWidget() {
 
     widget.addSpacer(15);
 
-    let binOne = stack.addText(getIcon(nextBins[0]));
+    let binOne = widget.addText(getIcon(nextBins[0]));
     binOne.centerAlignText();
 
-    let binTwo = stack.addText(getIcon(nextBins[1]));
+    let binTwo = widget.addText(getIcon(nextBins[1]));
     binTwo.centerAlignText();
 
     widget.backgroundColor = new Color("#000000");
