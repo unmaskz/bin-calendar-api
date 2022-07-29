@@ -83,6 +83,11 @@ async function createWidget() {
     await notification.schedule();
     */
 
-    widget.backgroundGradient = new LinearGradient(['#00000022', '#00000022'], [0, 1]);
+    let startColor = new Color("#4b5735");
+    let endColor = new Color("#3d6032");
+    let gradient = new LinearGradient();
+    gradient.colors = [startColor, endColor];
+    gradient.locations = [0.0, 1];
+    widget.backgroundGradient = gradient;
     return widget;
 }
