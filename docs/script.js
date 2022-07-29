@@ -32,11 +32,11 @@ function dayDifference(today, nextCollectionDate) {
 
 function getBinColour(bin) {
     if (bin === 'Brown') {
-        return '#7f6d49';
+        return '#6b6162';
     } else if (bin === 'Green') {
-        return '#728c6f';
+        return '#48a03f';
     } else if (bin === 'Blue') {
-        return '#0074bd';
+        return '#419dc4';
     } else {
         return '#575556';
     }
@@ -69,8 +69,8 @@ async function createWidget() {
     let binIcon = SFSymbol.named('trash.fill')
     let binOne = bins.addImage(binIcon.image);
     let binTwo = bins.addImage(binIcon.image);
-    binOne.tintColor = Color(getBinColour(nextCollection.bins[0]));
-    binTwo.tintColor = Color(getBinColour(nextCollection.bins[1]));
+    binOne.tintColor = new Color(getBinColour(nextCollection.bins[0]));
+    binTwo.tintColor = new Color(getBinColour(nextCollection.bins[1]));
     binOne.imageSize = new Size(35, 35);
     binTwo.imageSize = new Size(35, 35);
     bins.addSpacer();
