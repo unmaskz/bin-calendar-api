@@ -13,7 +13,7 @@ Script.complete();
 function getNextDayOfTheWeek(dayName, excludeToday = true, refDate = new Date()) {
     const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].indexOf(dayName);
     if (dayOfWeek < 0) return;
-    refDate.setHours(0,0,0,0);
+    refDate.setHours(19, 0, 0);
     refDate.setDate(refDate.getDate() + +!!excludeToday + (dayOfWeek + 7 - refDate.getDay() - +!!excludeToday) % 7);
     return refDate;
 }
@@ -62,7 +62,7 @@ async function createWidget() {
 
     widget.addSpacer(5);
 
-    let daysUntilText = widget.addText(`${daysUntilNextCollection} days`);
+    let daysUntilText = widget.addText(`${daysUntilNextCollection} ${daysUntilNextCollection === 1 ? 'day' : 'days'}`);
     daysUntilText.centerAlignText();
     daysUntilText.font = Font.boldSystemFont(28);
     daysUntilText.textColor = new Color("#ffffff");
@@ -76,6 +76,12 @@ async function createWidget() {
     binOne.imageSize = new Size(35, 35);
     binTwo.imageSize = new Size(35, 35);
     bins.addSpacer();
+
+    let notification = new Notification();
+    notification.title = "Bin Reminder";
+    notification.body = `Your ${nextCollection.bins[0]} and ${nextCollection.bins[1]} are due tomorrow. Please put them out for collection.`;
+    notification.setTriggerDate(getNextDayOfTheWeek('Monday'));
+    await notification.schedule();
 
     widget.backgroundGradient = new LinearGradient(['#00000022', '#00000022'], [0, 1]);
     return widget;
