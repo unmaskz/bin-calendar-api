@@ -7,7 +7,7 @@ const greyBinImage = await new Request("https://unmaskz.github.io/bin-calendar-a
 
 let widget = await createWidget();
 Script.setWidget(widget);
-widget.presentMedium();
+widget.presentSmall();
 Script.complete();
 
 function getNextDayOfTheWeek(dayName, excludeToday = true, refDate = new Date()) {
@@ -57,14 +57,14 @@ async function createWidget() {
 
     let heading = widget.addText("Next Collection");
     heading.centerAlignText();
-    heading.font = Font.lightSystemFont(16);
+    heading.font = Font.lightSystemFont(18);
     heading.textColor = new Color("#ffffff");
 
     widget.addSpacer(5);
 
     let daysUntilText = widget.addText(`${daysUntilNextCollection} days`);
     daysUntilText.centerAlignText();
-    daysUntilText.font = Font.boldSystemFont(24);
+    daysUntilText.font = Font.boldSystemFont(28);
     daysUntilText.textColor = new Color("#ffffff");
 
     widget.addSpacer(15);
@@ -74,6 +74,8 @@ async function createWidget() {
     let binTwo = bins.addImage(getBinImage(nextCollection.bins[1]));
     binOne.imageSize = new Size(35, 35);
     binTwo.imageSize = new Size(35, 35);
+    binOne.centerAlignImage();
+    binTwo.centerAlignImage();
 
     widget.backgroundColor = new Color("#000000");
     return widget;
