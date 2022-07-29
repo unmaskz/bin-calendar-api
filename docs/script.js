@@ -77,6 +77,6 @@ async function createWidget() {
     binTwo.imageSize = new Size(35, 35);
     bins.addSpacer();
 
-    widget.backgroundGradient = newLinearGradient(['#00000022','#00000022'], [0,1]);
+    widget.backgroundGradient = new LinearGradient(['#00000022', '#00000022'], [0, 1]);
     return widget;
 }
