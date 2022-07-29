@@ -1,4 +1,9 @@
 const dataUrl = "https://unmaskz.github.io/bin-calendar-api/calendar.json";
+const blueBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/blue-bin.png").loadImage();
+const brownBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/brown-bin.png").loadImage();
+const greenBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/green-bin.png").loadImage();
+const greyBinImage = await new Request("https://unmaskz.github.io/bin-calendar-api/grey-bin.png").loadImage();
+
 
 let widget = await createWidget();
 Script.setWidget(widget);
@@ -30,15 +35,15 @@ function dayDifference(today, nextCollectionDate) {
     return Math.ceil(difference / (1000 * 3600 * 24));
 }
 
-function getIcon(bin) {
+function getBinImage(bin) {
     if (bin === 'Brown') {
-        return '🟤';
+        return brownBinImage;
     } else if (bin === 'Green') {
-        return '🟢';
+        return greenBinImage;
     } else if (bin === 'Blue') {
-        return '🔵';
+        return blueBinImage;
     } else {
-        return '⚫️';
+        return greyBinImage;
     }
 }
 
@@ -50,16 +55,25 @@ async function createWidget() {
     const data = await new Request(dataUrl).loadJSON();
     const nextCollection = data.calendar.find(item => item.day === formatDate(nextCollectionDate));
 
-    let heading = widget.addText(`Next Collection: ${daysUntilNextCollection} days`);
+    let heading = widget.addText("Next Collection");
     heading.centerAlignText();
-    heading.font = Font.lightSystemFont(25);
+    heading.font = Font.lightSystemFont(16);
     heading.textColor = new Color("#ffffff");
+
+    widget.addSpacer(5);
+
+    let daysUntilText = widget.addText(`${daysUntilNextCollection} days`);
+    daysUntilText.centerAlignText();
+    daysUntilText.font = Font.boldSystemFont(24);
+    daysUntilText.textColor = new Color("#ffffff");
 
     widget.addSpacer(15);
 
-    let binsText = `${getIcon(nextCollection.bins[0])} ${getIcon(nextCollection.bins[1])}`;
-    let bins = widget.addText(binsText);
-    bins.centerAlignText();
+    let bins = widget.addStack();
+    let binOne = bins.addImage(getBinImage(nextCollection.bins[0]));
+    let binTwo = bins.addImage(getBinImage(nextCollection.bins[1]));
+    binOne.imageSize = new Size(35, 35);
+    binTwo.imageSize = new Size(35, 35);
 
     widget.backgroundColor = new Color("#000000");
     return widget;
