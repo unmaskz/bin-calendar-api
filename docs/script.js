@@ -55,7 +55,7 @@ async function createWidget() {
     const data = await new Request(dataUrl).loadJSON();
     const nextCollection = data.calendar.find(item => item.day === formatDate(nextCollectionDate));
 
-    let heading = widget.addText("Next Collection");
+    let heading = widget.addText("Bins Due in");
     heading.centerAlignText();
     heading.font = Font.lightSystemFont(18);
     heading.textColor = new Color("#ffffff");
