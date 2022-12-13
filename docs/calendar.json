@@ -153,6 +153,370 @@
                 "Brown",
                 "Green"
             ]
+        },
+        {
+            "day": "03/01/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "10/01/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "17/01/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "24/01/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "31/01/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "07/02/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "14/02/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "21/02/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "28/02/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "07/03/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "14/03/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "21/03/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "28/03/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "04/04/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "11/04/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "18/04/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "25/04/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "02/05/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "09/05/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "16/05/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "23/05/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "30/05/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "06/06/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "13/06/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "20/06/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "27/06/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "04/07/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "11/07/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "18/07/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "25/07/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "01/08/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "08/08/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "15/08/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "22/08/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "29/08/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "05/09/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "12/09/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "19/09/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "26/09/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "03/10/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "10/10/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "17/10/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "24/10/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "31/10/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "07/11/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "14/11/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "21/11/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "28/11/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "05/12/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
+        },
+        {
+            "day": "12/12/2023",
+            "bins": [
+                "Brown",
+                "Grey"
+            ]
+        },
+        {
+            "day": "19/12/2023",
+            "bins": [
+                "Brown",
+                "Green"
+            ]
+        },
+        {
+            "day": "26/12/2023",
+            "bins": [
+                "Brown",
+                "Blue"
+            ]
         }
     ]
 }

@@ -42,6 +42,10 @@ function getBinColour(bin) {
     }
 }
 
+function getNotificationDate(nextCollectionDate) {
+    const nextCollectionDate = "";
+}
+
 async function createWidget() {
     const widget = new ListWidget();
     const nextCollectionDate = getNextDayOfTheWeek('Tuesday');
@@ -75,13 +79,13 @@ async function createWidget() {
     binTwo.imageSize = new Size(35, 35);
     bins.addSpacer();
 
-    /*
+    
     let notification = new Notification();
     notification.title = "Bin Reminder";
     notification.body = `Your ${nextCollection.bins[0]} and ${nextCollection.bins[1]} are due tomorrow. Please put them out for collection.`;
-    notification.setTriggerDate(getNextDayOfTheWeek('Monday'));
-    await notification.schedule();
-    */
+    const triggerDate = getNotificationDate(nextCollectionDate);
+    //notification.setTriggerDate(triggerDate);
+    //await notification.schedule();
 
     let startColor = new Color("#4b5735");
     let endColor = new Color("#3d6032");
