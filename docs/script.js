@@ -42,7 +42,7 @@ function getBinColour(bin) {
 }
 
 function getNotificationDate(nextCollectionDate) {
-    const nextCollectionDate = "";
+    return "";
 }
 
 async function createWidget() {
