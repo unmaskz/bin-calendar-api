@@ -5,6 +5,13 @@ Script.setWidget(widget);
 widget.presentSmall();
 Script.complete();
 
+const binColours = {
+    'Brown': '#3a3434',
+    'Green': '#48a03f',
+    'Blue': '#419dc4',
+    'Grey': '#575556'
+}
+
 function getNextDayOfTheWeek(dayName, excludeToday = true, refDate = new Date()) {
     const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].indexOf(dayName);
     if (dayOfWeek < 0) return;
@@ -31,15 +38,7 @@ function dayDifference(today, nextCollectionDate) {
 }
 
 function getBinColour(bin) {
-    if (bin === 'Brown') {
-        return '#3a3434';
-    } else if (bin === 'Green') {
-        return '#48a03f';
-    } else if (bin === 'Blue') {
-        return '#419dc4';
-    } else {
-        return '#575556';
-    }
+    return binColours[bin] || '#575556';
 }
 
 function getNotificationDate(nextCollectionDate) {
@@ -77,15 +76,19 @@ async function createWidget() {
     binTwo.tintColor = new Color(getBinColour(nextCollection.bins[1]));
     binOne.imageSize = new Size(35, 35);
     binTwo.imageSize = new Size(35, 35);
+
+    if (nextCollection.bins.length === 1) {
+        binTwo.hidden = true;
+    }
+
     bins.addSpacer();
 
-    
     let notification = new Notification();
     notification.title = "Bin Reminder";
     notification.body = `Your ${nextCollection.bins[0]} and ${nextCollection.bins[1]} are due tomorrow. Please put them out for collection.`;
     const triggerDate = getNotificationDate(nextCollectionDate);
-    //notification.setTriggerDate(triggerDate);
-    //await notification.schedule();
+    // notification.setTriggerDate(triggerDate);
+    // await notification.schedule();
 
     let startColor = new Color("#4b5735");
     let endColor = new Color("#3d6032");
