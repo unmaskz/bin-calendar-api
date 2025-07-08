@@ -70,15 +70,15 @@ async function createWidget() {
     let bins = widget.addStack();
     bins.addSpacer();
     let binIcon = SFSymbol.named('trash.fill')
+    
     let binOne = bins.addImage(binIcon.image);
-    let binTwo = bins.addImage(binIcon.image);
     binOne.tintColor = new Color(getBinColour(nextCollection.bins[0]));
-    binTwo.tintColor = new Color(getBinColour(nextCollection.bins[1]));
     binOne.imageSize = new Size(35, 35);
-    binTwo.imageSize = new Size(35, 35);
 
-    if (nextCollection.bins.length === 1) {
-        binTwo.hidden = true;
+    if (nextCollection.bins.length > 1) {
+        let binTwo = bins.addImage(binIcon.image);
+        binTwo.tintColor = new Color(getBinColour(nextCollection.bins[1]));
+        binTwo.imageSize = new Size(35, 35);
     }
 
     bins.addSpacer();
@@ -90,11 +90,6 @@ async function createWidget() {
     // notification.setTriggerDate(triggerDate);
     // await notification.schedule();
 
-    let startColor = new Color("#4b5735");
-    let endColor = new Color("#3d6032");
-    let gradient = new LinearGradient();
-    gradient.colors = [startColor, endColor];
-    gradient.locations = [0.0, 1];
-    widget.backgroundGradient = gradient;
+    widget.backgroundGradient = new LinearGradient(['#00000022', '#00000022'], [0, 1]);
     return widget;
 }
