@@ -5,13 +5,6 @@ Script.setWidget(widget);
 widget.presentSmall();
 Script.complete();
 
-const binColours = {
-    'Brown': '#3a3434',
-    'Green': '#48a03f',
-    'Blue': '#419dc4',
-    'Grey': '#575556'
-}
-
 function getNextDayOfTheWeek(dayName, excludeToday = true, refDate = new Date()) {
     const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].indexOf(dayName);
     if (dayOfWeek < 0) return;
@@ -38,6 +31,13 @@ function dayDifference(today, nextCollectionDate) {
 }
 
 function getBinColour(bin) {
+    const binColours = {
+        'Brown': '#3a3434',
+        'Green': '#48a03f',
+        'Blue': '#419dc4',
+        'Grey': '#575556'
+    }
+    
     return binColours[bin] || '#575556';
 }
 
